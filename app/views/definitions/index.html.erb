@@ -7,6 +7,7 @@
   </div>
   <div class="two centered">
     <h5><%= link_to "#{definition.word}", definition %></h5>
+    <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %> <%= definition.created_at.strftime("%-m/%-d/%-y") %> </p>
   </div>
   <div class="three">
     <h5><%= definition.definition %></h5>

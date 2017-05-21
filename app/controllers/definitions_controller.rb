@@ -25,6 +25,7 @@ class DefinitionsController < ApplicationController
   # POST /definitions.json
   def create
     @definition = Definition.new(definition_params)
+    definition.user_id == current_user.id
 
     respond_to do |format|
       if @definition.save
