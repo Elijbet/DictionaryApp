@@ -27,3 +27,37 @@ h5 {
 	align-items: center;
   justify-content: center;
 }
+.box {
+	display: flex;
+	flex-direction: column;
+}
+.box-1{
+	flex: 1;
+	order: 2;
+}
+.box-2{
+	flex: 2;
+	order: 1;
+}
+.links {
+  display: inline-block;
+  padding: 3px;
+  color: #909090;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+@media (max-width: 992px){
+	.account-toggler {
+	    -ms-flex-item-align: start;
+	    align-self: flex-start;
+	    padding: 0.25rem 0.75rem;
+	    font-size: 1.25rem;
+	    line-height: 1;
+	    background: transparent;
+	    border: 1px solid transparent;
+	    border-radius: 0.25rem;
+	}
+}
