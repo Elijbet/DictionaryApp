@@ -7,12 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_list = [
-  [ "Germany", 81831000 ],
-  [ "France", 65447374 ],
-  [ "Belgium", 10839905 ],
-  [ "Netherlands", 16680000 ]
+  [ "Lena", "Berger", "lena@new.com", "password" ],
+  [ "Frank", "Noor", "frank@new.com", "password" ],
+  [ "Ben", "Heidi", "ben@new.com", "password" ],
+  [ "Nathan", "Kim", "nathan@new.com", "password" ],
+  [ "Karl", "West", "karl@new.com", "password"],
+  [ "Sally", "Reed", "sally@new.com", "password"],
+  [ "Linda", "Chang", "linda@new.com", "password"],
+  [ "Robert", "Carmel", "robert@new.com", "password"],
+  [ "Max", "Phoebe", "max@new.com", "password"], 
+  [ "Matt", "Mundi", "matt@new.com", "password"]
 ]
 
-country_list.each do |name, population|
-  Country.create( name: name, population: population )
+user_list.each do |first_name, last_name, email, password|
+  User.create( first_name:first_name, last_name:last_name, email:email, password:password, password_confirmation:password )
+
 end
