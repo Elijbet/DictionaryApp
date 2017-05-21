@@ -1,0 +1,29 @@
+.band {
+	display: flex;
+  flex-wrap: wrap;
+}
+.one{
+	flex: 1;
+	display: flex;
+	min-width: 150px;
+}
+.two{
+	flex: 2;
+	display: flex;
+	min-width: 300px;
+	h5 {
+		font-size: 3em;
+	}
+}
+.three{
+	flex: 7;
+	padding: 20px;
+	min-width: 400px;
+}
+h5 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.centered {
+	align-items: center;
+  justify-content: center;
+}

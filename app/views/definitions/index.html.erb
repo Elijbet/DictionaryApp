@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<!-- flex band -->
+<% @definitions.each do |definition| %>
+<div class="band">
+  <div class="one centered">
+    <h5>votes</h5>
+  </div>
+  <div class="two centered">
+    <h5><%= link_to "#{definition.word}", definition %></h5>
+  </div>
+  <div class="three">
+    <h5><%= definition.definition %></h5>
+  </div>
+</div>
+<% end %>
+<!-- end of flex band -->
+
+<%= link_to 'New Definition', new_definition_path %>
