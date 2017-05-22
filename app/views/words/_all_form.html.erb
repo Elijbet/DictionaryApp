@@ -16,6 +16,22 @@
     <%= form.text_field :word, id: :word_word %>
   </div>
 
+<!-- form fields for nested definitions -->
+  <%= form.fields_for :definitions do |definition| %>
+
+    <div class="field">
+      <%= definition.label :definition %>
+      <%= definition.text_field :definition %>
+    </div>
+
+    <div class="field">
+      <%= definition.label :URL %>
+      <%= definition.text_field :URL %>
+    </div>
+
+  <% end %>
+<!-- end of form fields for nested definitions -->
+
   <div class="actions">
     <%= form.submit %>
   </div>

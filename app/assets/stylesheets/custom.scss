@@ -116,3 +116,10 @@ nav div {
 	display: flex;
 	flex-direction: column;
 }
+
+button, input, optgroup, select, textarea, .nav-link {
+	font-family: 'Yanone Kaffeesatz', sans-serif !important;
+}
+.nav-link {
+	font-size: 1.5em;
+}

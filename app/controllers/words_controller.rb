@@ -18,6 +18,11 @@ class WordsController < ApplicationController
     @word = Word.new
   end
 
+  def all_new
+    @word = Word.new
+    1.times { @word.definitions.build }
+  end
+
   # GET /words/1/edit
   def edit
   end
@@ -25,13 +30,15 @@ class WordsController < ApplicationController
   # POST /words
   # POST /words.json
   def create
-    @word = Word.new(word_params)
-    @word.user_id = current_user.id
+    #@word = Word.new(word_params)
+    #@word.user_id = current_user.id
 
+    @word =  current_user.words.new(word_params)
+    @word.definitions.each  {|definition| definition.user_id = current_user.id }
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @word, notice: 'Word was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Word was successfully created.' }
         format.json { render :show, status: :created, location: @word }
       else
         format.html { render :new }
@@ -45,7 +52,7 @@ class WordsController < ApplicationController
   def update
     respond_to do |format|
       if @word.update(word_params)
-        format.html { redirect_to @word, notice: 'Word was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Word was successfully updated.' }
         format.json { render :show, status: :ok, location: @word }
       else
         format.html { render :edit }
@@ -69,9 +76,8 @@ class WordsController < ApplicationController
     def set_word
       @word = Word.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
-      params.require(:word).permit(:word, :user_id)
+      params.require(:word).permit(:word, definitions_attributes: [:definition, :URL])
     end
 end
