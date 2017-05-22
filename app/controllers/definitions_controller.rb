@@ -1,5 +1,7 @@
 class DefinitionsController < ApplicationController
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
+  before_action :set_word
+
 
   # GET /definitions
   # GET /definitions.json
@@ -68,6 +70,9 @@ class DefinitionsController < ApplicationController
       @definition = Definition.find(params[:id])
     end
 
+    def set_word
+      @word = Word.find(params[:word_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def definition_params
       params.require(:definition).permit(:word, :definition, :URL)

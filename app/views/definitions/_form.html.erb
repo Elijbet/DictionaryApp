@@ -1,4 +1,4 @@
-<%= form_with(model: definition, local: true) do |form| %>
+<%= form_for([@word, @definition]) do |form| %>
   <% if definition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(definition.errors.count, "error") %> prohibited this definition from being saved:</h2>

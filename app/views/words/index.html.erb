@@ -13,13 +13,14 @@
   <div class="three">
     <% word.definitions.each do |definition| %>
       <h5><%= definition.definition %></h5>
-      <p><%=  %></p>
       <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %> <%= definition.created_at.strftime("%-m/%-d/%-y") %> </p>
     <% end %>
+    <p><%= link_to 'New Definition', new_word_definition_path(word) %></p>
   </div>
 </div>
+
 <% end %>
 <!-- end of flex band -->
 
 <%= link_to 'New Word', new_word_path %>
-<%= link_to 'New Definition', new_definition_path %>
+
