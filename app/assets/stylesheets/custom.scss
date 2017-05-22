@@ -2,13 +2,9 @@
 	display: flex;
   flex-wrap: wrap;
 }
-.one{
-	flex: 1;
-	display: flex;
-	min-width: 150px;
-}
+
 .two{
-	flex: 2;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	min-width: 300px;
@@ -17,10 +13,20 @@
 	}
 }
 .three{
-	flex: 7;
+	flex: 8;
+	display: flex;
 	flex-direction: column;
 	padding: 20px;
 	min-width: 400px;
+}
+.three-b{
+	display: flex;
+}
+.votes{
+	flex: 1;
+}
+.definitions{
+	flex: 6;
 }
 h5 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;

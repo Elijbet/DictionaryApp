@@ -1,22 +1,25 @@
 <!-- flex band -->
 <% @words.each do |word| %>
 <div class="band">
-  <div class="one centered">
-    <h5>votes</h5>
-  </div>
   <div class="two centered">
     <h5><%= link_to "#{word.word}", word %></h5>
     <p class="attribute"><%= word.user.first_name %> <%= word.user.last_name %> <%= word.created_at.strftime("%-m/%-d/%-y") %> </p>
   </div>
   <div class="three">
     <% word.definitions.each do |definition| %>
-      <h5><%= definition.definition %></h5>
-      <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %> <%= definition.created_at.strftime("%-m/%-d/%-y") %> </p>
+      <div class="three-b">
+        <div class="votes">
+          <h5>votes</h5>
+        </div>
+        <div class="definitions">
+            <h5><%= definition.definition %></h5>
+            <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %> <%= definition.created_at.strftime("%-m/%-d/%-y") %> </p>
+        </div>
+      </div>
     <% end %>
     <p><%= link_to 'New Definition', new_word_definition_path(word) %></p>
   </div>
 </div>
-
 <% end %>
 <!-- end of flex band -->
 
