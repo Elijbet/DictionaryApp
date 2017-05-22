@@ -1,5 +1,6 @@
 class DefinitionsController < ApplicationController
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_word
 
 
@@ -27,11 +28,12 @@ class DefinitionsController < ApplicationController
   # POST /definitions.json
   def create
     @definition = Definition.new(definition_params)
-    definition.user_id == current_user.id
+    @definition.user_id = current_user.id
+    @definition.word_id = @word.id
 
     respond_to do |format|
       if @definition.save
-        format.html { redirect_to @definition, notice: 'Definition was successfully created.' }
+        format.html { redirect_to words_path, notice: 'Definition was successfully created.' }
         format.json { render :show, status: :created, location: @definition }
       else
         format.html { render :new }
@@ -45,7 +47,7 @@ class DefinitionsController < ApplicationController
   def update
     respond_to do |format|
       if @definition.update(definition_params)
-        format.html { redirect_to @definition, notice: 'Definition was successfully updated.' }
+        format.html { redirect_to words_path, notice: 'Definition was successfully updated.' }
         format.json { render :show, status: :ok, location: @definition }
       else
         format.html { render :edit }
@@ -75,6 +77,6 @@ class DefinitionsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def definition_params
-      params.require(:definition).permit(:word, :definition, :URL)
+      params.require(:definition).permit(:definition, :URL)
     end
 end

@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /words
   # GET /words.json
@@ -25,7 +26,7 @@ class WordsController < ApplicationController
   # POST /words.json
   def create
     @word = Word.new(word_params)
-    word.user_id == current_user.id
+    @word.user_id = current_user.id
 
 
     respond_to do |format|
