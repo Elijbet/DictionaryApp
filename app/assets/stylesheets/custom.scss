@@ -107,9 +107,13 @@ nav div {
 		font-size: 2em;
 		color: #FFD059;
 	}
-	h4.sub {
+	.sub {
 		padding-left: 20px;
-		font-size: 1em;
+		font-size: .7em;
+		margin-top: 0;
+	}
+	a, a:visited {
+  color: black;
 	}
 }
 .nav-brand {
