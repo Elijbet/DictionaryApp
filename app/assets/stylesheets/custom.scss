@@ -31,9 +31,14 @@ body {
 .definitions{
 	flex: 6;
 }
+h4 {
+	font-family: 'Montserrat Subrayada', sans-serif;
+
+}
 h5 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+
 .centered {
 	align-items: center;
   justify-content: center;
@@ -101,8 +106,9 @@ nav div {
 		font-size: 2em;
 		color: #FFD059;
 	}
-	a.sub {
-		padding-left: 40px;
+	h4.sub {
+		padding-left: 20px;
+		font-size: 1em;
 	}
 }
 .nav-brand {
