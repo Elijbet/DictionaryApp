@@ -7,7 +7,7 @@ class DefinitionsController < ApplicationController
   # GET /definitions
   # GET /definitions.json
   def index
-    @definitions = Definition.all.limit(1)
+    @definitions = Definition.all
   end
 
   # GET /definitions/1

@@ -5,7 +5,11 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
+    @words = Word.all.order('created_at DESC').paginate(:page => params[:page], 
+                                                        :per_page => 2)
+
+    #@definitions = @words.each  {|word| word.definitions.order('created_at DESC').paginate :per_page => 2, :page => params[:page]}
+
   end
 
   # GET /words/1
