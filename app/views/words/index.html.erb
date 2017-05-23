@@ -7,6 +7,11 @@
   <div class="two centered">
     <h5><%= link_to "#{word.word}", word %></h5>
     <p class="attribute"><%= word.user.first_name %> <%= word.user.last_name %>, <%= word.created_at.strftime("%-m/%-d/%-y") %> </p>
+    
+    <%= link_to new_word_definition_path(word) do %>
+      <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>
+    <% end %>
+
   </div>
   <div class="three">
 
@@ -24,7 +29,6 @@
           </div>
         </div>
       
-        <p><%= link_to 'New Definition', new_word_definition_path(word) %></p>
         <p><%= link_to 'All Definitions', word_path(word) %></p>
       <% end %>
     
