@@ -1,6 +1,4 @@
-<div>
-  <%= will_paginate @words %>
-</div>
+
 
 <!-- flex band -->
 
@@ -11,7 +9,10 @@
     <p class="attribute"><%= word.user.first_name %> <%= word.user.last_name %>, <%= word.created_at.strftime("%-m/%-d/%-y") %> </p>
   </div>
   <div class="three">
-      <% word.definitions.first(2).each do |definition| %>
+
+    <%#= will_paginate word.definitions %>
+
+      <% word.definitions.each do |definition| %>
         <div class="three-b">
           <div class="votes">
             <h5>votes</h5>
@@ -22,19 +23,17 @@
               <div class="honeycomb"></div>
           </div>
         </div>
+      
+        <p><%= link_to 'New Definition', new_word_definition_path(word) %></p>
+        <p><%= link_to 'All Definitions', word_path(word) %></p>
       <% end %>
-    <p><%= link_to 'New Definition', new_word_definition_path(word) %></p>
-    <p><%= link_to 'All Definitions', word_path(word) %></p>
-  </div>
+    
+    <%#= will_paginate word.definitions %>
 
-  <% end %>
+  </div>
 
 </div>
 <!-- end of flex band -->
-
-<div>
-  <%= will_paginate @words %>
-</div>
-
+<% end %>
 <%= link_to 'New Word', new_word_path %>
 
