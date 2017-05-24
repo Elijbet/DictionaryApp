@@ -1,16 +1,26 @@
 <p id="notice"><%= notice %></p>
-
+    
     <%#= will_paginate word.definitions %>
+    <div class="show">
+
+        <div class="show-a">
+          <div class="show-margin">
+          </div>
+          <div class="show-heading">
+            <h5><%= @word.word %></h5>
+          </div>
+        </div>
 
       <% @word.definitions.each do |definition| %>
-        <div class="three-b">
 
-          <div class="votes">
+        <div class="show-b">
+
+          <div class="show-votes">
             <h5><%#= definition.definition.liked_by @user %></h5>
             <h5><%#= definition.definition.votes_for.size %></h5>
           </div>
 
-          <div class="definitions">
+          <div class="show-definitions">
               <h5><%= definition.definition %></h5>
               <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> </p>
               <div class="honeycomb"></div>
@@ -28,12 +38,11 @@
           <%= definition.get_downvotes.size %>
         <% end %>
 
-        
-
         <!-- end of voting functionality --> 
 
       <% end %>
-    
+
+    </div>
     <%#= will_paginate word.definitions %>
 
 

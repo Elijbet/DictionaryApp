@@ -142,3 +142,32 @@ button, input, optgroup, select, textarea, .nav-link {
 div.pagination {
 	float: right;
 }
+.show {
+	display: flex;
+	flex-direction: column;
+}
+.show-a {
+	display: flex;
+	flex: 1;
+}
+.show-margin{
+	flex: 1;
+}
+.show-heading {
+	flex: 6;
+	h5{
+	font-size: 3em;
+	color: #FFD059;
+	margin-bottom: 50px;
+	}
+}
+.show-b {
+	display: flex;
+	flex: 1;
+}
+.show-votes {
+	flex: 1;
+}
+.show-definitions {
+ 	flex: 6;
+}
