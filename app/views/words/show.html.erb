@@ -48,6 +48,16 @@
         <div class="show-definitions">
             <h5><%= definition.definition %></h5>
             <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago.</p>
+            <div class="edit">
+              <% if current_user.id == @word.user_id %>
+                <%= link_to edit_word_path(@word) do %>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to @word, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </div>
             <div class="honeycomb"></div>
         </div>
       </div>
