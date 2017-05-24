@@ -19,7 +19,7 @@ body {
 	flex: 8;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	padding: 20px 20px 20px;
 	min-width: 400px;
 }
 .three-b{
@@ -133,9 +133,12 @@ button, input, optgroup, select, textarea, .nav-link {
 		padding-right: 10%;
 	}
 }
-.definitions {
+.definitions h5 {
 	a, a:visited {
   color: #D0A059;
   font-size: 1.1em;
 	}
+}
+div.pagination {
+	float: right;
 }
