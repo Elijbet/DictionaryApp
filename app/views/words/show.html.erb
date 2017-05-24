@@ -3,46 +3,54 @@
     <%#= will_paginate word.definitions %>
     <div class="show">
 
-        <div class="show-a">
-          <div class="show-margin">
-          </div>
-          <div class="show-heading">
-            <h5><%= @word.word %></h5>
-          </div>
+      <div class="show-a">
+        <div class="show-margin">
         </div>
+        <div class="show-heading">
+          <h5 class="edit"><%= @word.word %></h5>
+            <div class="edit">
+              <% if current_user.id == @word.user_id %>
+                <%= link_to edit_word_path(@word) do %>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to @word, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div>
 
       <% @word.definitions.each do |definition| %>
 
-        <div class="show-b">
+      <div class="show-b">
 
-          <div class="show-votes centered">
-          
-            <!-- voting functionality -->
-            <div>
+        <div class="show-votes centered">
 
-              <p><%= link_to like_word_definition_path(@word, definition), method: :put do %>
-                <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
-              <% end %></p>
-              
-              <p><%= definition.get_upvotes.size %></p>
-              
-              <p><%= link_to dislike_word_definition_path(@word, definition), method: :put do %>
-                <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i>
-              <% end %></p>
+          <!-- voting functionality -->
+          <div>
 
-            </div>
-            <!-- end of voting functionality -->
+            <p><%= link_to like_word_definition_path(@word, definition), method: :put do %>
+              <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
+            <% end %></p>
+            
+            <p><%= definition.get_upvotes.size %></p>
+            
+            <p><%= link_to dislike_word_definition_path(@word, definition), method: :put do %>
+              <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i>
+            <% end %></p>
 
           </div>
+          <!-- end of voting functionality -->
 
-          <div class="show-definitions">
-              <h5><%= definition.definition %></h5>
-              <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago.</p>
-              <div class="honeycomb"></div>
-          </div>
         </div>
 
- 
+        <div class="show-definitions">
+            <h5><%= definition.definition %></h5>
+            <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago.</p>
+            <div class="honeycomb"></div>
+        </div>
+      </div>
 
       <% end %>
 
