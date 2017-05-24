@@ -33,9 +33,15 @@
           </div>
         </div>
       
-        <p><%= link_to 'All Definitions', word_path(word) %></p>
       <% end %>
     
+        <div class="three-b">
+          <div class="votes">
+          </div>
+          <div class="definitions">
+            <h5><%= link_to 'Complete List of Definitions', word_path(word) %></h5>
+          </div>
+        </div>
     <%#= will_paginate word.definitions %>
 
   </div>
