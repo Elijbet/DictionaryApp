@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :words do
-  	resources :definitions
+  	resources :definitions do 
+      member do
+        put "like", to: "definitions#upvote"
+        put "dislike", to: "definitions#downvote"
+      end
+    end 
   	collection do
   		get 'all_new'
   	end
@@ -12,3 +17,4 @@ Rails.application.routes.draw do
 root to: 'words#index'
 
 end
+

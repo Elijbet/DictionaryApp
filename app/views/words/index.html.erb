@@ -1,3 +1,4 @@
+<%= will_paginate @words %>
 
 
 <!-- flex band -->
@@ -17,11 +18,14 @@
 
     <%#= will_paginate word.definitions %>
 
-      <% word.definitions.each do |definition| %>
+      <% word.definitions.first(2).each do |definition| %>
         <div class="three-b">
+
           <div class="votes">
-            <h5>votes</h5>
+            <h5><%#= definition.definition.liked_by @user %></h5>
+            <h5><%#= definition.definition.votes_for.size %></h5>
           </div>
+
           <div class="definitions">
               <h5><%= definition.definition %></h5>
               <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, <%= definition.created_at.strftime("%-m/%-d/%-y") %> </p>
@@ -39,5 +43,8 @@
 </div>
 <!-- end of flex band -->
 <% end %>
+
+<%= will_paginate @words %>
+
 <%= link_to 'New Word', new_word_path %>
 

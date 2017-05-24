@@ -1,5 +1,5 @@
 class DefinitionsController < ApplicationController
-  before_action :set_definition, only: [:show, :edit, :update, :destroy]
+  before_action :set_definition, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!
   before_action :set_word
 
@@ -64,6 +64,16 @@ class DefinitionsController < ApplicationController
       format.html { redirect_to definitions_url, notice: 'Definition was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote 
+    @definition.upvote_by current_user
+    redirect_to word_path(@word)
+  end  
+
+  def downvote
+    @definition.downvote_by current_user
+    redirect_to word_path(@word)
   end
 
   private

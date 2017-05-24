@@ -4,4 +4,6 @@ class Definition < ApplicationRecord
 
 	self.per_page = 2
 
+	acts_as_votable
+	
 end

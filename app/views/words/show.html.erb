@@ -1,14 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Word:</strong>
-  <%= @word.word %>
-</p>
+    <%#= will_paginate word.definitions %>
 
-<p>
-  <strong>User:</strong>
-  <%= @word.user_id %>
-</p>
+      <% @word.definitions.each do |definition| %>
+        <div class="three-b">
+
+          <div class="votes">
+            <h5><%#= definition.definition.liked_by @user %></h5>
+            <h5><%#= definition.definition.votes_for.size %></h5>
+          </div>
+
+          <div class="definitions">
+              <h5><%= definition.definition %></h5>
+              <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> </p>
+              <div class="honeycomb"></div>
+          </div>
+        </div>
+
+        <!-- voting functionality -->
+        <%= link_to like_word_definition_path(@word, definition), method: :put do %>
+          Upvote
+          <%= definition.get_upvotes.size %>
+        <% end %>
+
+        <%= link_to dislike_word_definition_path(@word, definition), method: :put do %>
+          Downvote
+          <%= definition.get_downvotes.size %>
+        <% end %>
+
+        
+
+        <!-- end of voting functionality --> 
+
+      <% end %>
+    
+    <%#= will_paginate word.definitions %>
+
+
+
+
 
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>
