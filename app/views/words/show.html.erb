@@ -15,30 +15,33 @@
 
         <div class="show-b">
 
-          <div class="show-votes">
-            <h5><%#= definition.definition.liked_by @user %></h5>
-            <h5><%#= definition.definition.votes_for.size %></h5>
+          <div class="show-votes centered">
+            <!-- voting functionality -->
+            <div>
+
+              <p><%= link_to like_word_definition_path(@word, definition), method: :put do %>
+                <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
+              <% end %></p>
+              
+              <p><%= definition.get_upvotes.size %></p>
+              
+              <p><%= link_to dislike_word_definition_path(@word, definition), method: :put do %>
+                <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i>
+              <% end %></p>
+
+            </div>
+            <!-- end of voting functionality -->
+
           </div>
 
           <div class="show-definitions">
               <h5><%= definition.definition %></h5>
-              <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> </p>
+              <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago.</p>
               <div class="honeycomb"></div>
           </div>
         </div>
 
-        <!-- voting functionality -->
-        <%= link_to like_word_definition_path(@word, definition), method: :put do %>
-          Upvote
-          <%= definition.get_upvotes.size %>
-        <% end %>
-
-        <%= link_to dislike_word_definition_path(@word, definition), method: :put do %>
-          Downvote
-          <%= definition.get_downvotes.size %>
-        <% end %>
-
-        <!-- end of voting functionality --> 
+ 
 
       <% end %>
 

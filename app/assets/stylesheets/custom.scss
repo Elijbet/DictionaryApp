@@ -166,7 +166,12 @@ div.pagination {
 	flex: 1;
 }
 .show-votes {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
+	p {
+		text-align: center;
+	}
 }
 .show-definitions {
  	flex: 6;

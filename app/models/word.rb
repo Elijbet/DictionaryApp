@@ -4,5 +4,5 @@ class Word < ApplicationRecord
 	
 	accepts_nested_attributes_for :definitions
 
-	self.per_page = 2
+	self.per_page = 4
 end
