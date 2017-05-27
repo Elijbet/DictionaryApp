@@ -34,13 +34,22 @@ class WordsController < ApplicationController
   # POST /words.json
   def create
     #@word = Word.new(word_params)
-    #@word.user_id = current_user.id
+    #@incoming_word = Word.new(word_params)
+    #@word = Word.where(word: @incoming_word.word).first_or_create
 
-    @word =  current_user.words.new(word_params)
+    @word = Word.where(word: word_params[:word]).first_or_create
+    #The first_or_create method checks whether first returns nil or not. 
+    #If it does return nil, then create is called.
+
+    @word.user_id = current_user.id
+
+    #@word =  current_user.words.new(word_params)
     @word.definitions.each  {|definition| definition.user_id = current_user.id }
 
     respond_to do |format|
-      if @word.save
+      if Word.where(word: word_params[:word]).present?
+        format.html { redirect_to root_path, notice: 'Word already exists.' }
+      elsif @word.save
         format.html { redirect_to root_path, notice: 'Word was successfully created.' }
         format.json { render :show, status: :created, location: @word }
       else
