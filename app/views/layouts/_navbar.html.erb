@@ -22,11 +22,11 @@
       </li>
     </ul>
     <div class="box">
-      <form class="form-inline my-2 my-lg-0 box-1">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <form class="form-inline my-2 my-lg-0 box-1 ml-auto">
+        <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <div class="box-2">
+      <div class="box-2 ml-auto">
         <% if user_signed_in? %>
           <a><%= link_to 'Log Out', destroy_user_session_path, class: "links" %></a>
           <a><%= link_to 'Edit Account', edit_user_registration_path, class: "links" %></a>
