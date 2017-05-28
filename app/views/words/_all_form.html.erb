@@ -11,28 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :word %>
-    <%= form.text_field :word, id: :word_word %>
+<!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+      <h6>contribute new</h6><h5>WORD</h5><h6>with or w/o</h6><h5>DEFINITION</h5>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+        <h6>select known word, to add</h6><h5>DEFINITION</h5>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home" role="tabpanel">
+
+      <%= render 'form', word: @word %>
+
+    </div>
+    <div class="tab-pane" id="profile" role="tabpanel">...</div>
   </div>
 
-<!-- form fields for nested definitions -->
-  <%= form.fields_for :definitions do |definition| %>
-
-    <div class="field">
-      <%= definition.label :definition %>
-      <%= definition.text_field :definition %>
-    </div>
-
-    <div class="field">
-      <%= definition.label :URL %>
-      <%= definition.text_field :URL %>
-    </div>
-
-  <% end %>
-<!-- end of form fields for nested definitions -->
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

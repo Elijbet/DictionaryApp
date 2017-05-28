@@ -49,7 +49,15 @@ h4 {
 h5 {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-
+h6 {
+	padding: 3px;
+  color: #909090;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
 .centered {
 	align-items: center;
   justify-content: center;
@@ -201,4 +209,13 @@ div.pagination {
 .edit {
 	display: inline-block;
 	margin-right: 10px;
+}
+.nav-tabs .nav-link {
+	width: 350px;
+	h5, h6 {
+		display: inline-block;
+	}
+	h5 { 
+		padding: 0px 4px 0px 4px;
+	}
 }
