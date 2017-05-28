@@ -20,4 +20,6 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * limit each do loop
 * font awesome icons
 * acts_as_voter gem on the nested resource definition
-?    check if the word is already in the db: if it is, give a warning, if not save to db
+* check if the record (word) exists, before saving to database: first_or_create method
+* display words by date and top ranked definition first
+* votes tally on the index page

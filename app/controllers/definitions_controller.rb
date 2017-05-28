@@ -7,7 +7,7 @@ class DefinitionsController < ApplicationController
   # GET /definitions
   # GET /definitions.json
   def index
-    @definitions = Definition.all
+    @definitions = Definition.all.order(:cached_votes_up => :desc)
   end
 
   # GET /definitions/1

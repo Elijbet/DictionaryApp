@@ -21,12 +21,20 @@ body {
 	flex-direction: column;
 	padding: 20px 20px 20px;
 	min-width: 400px;
+	a, a:visited {
+	  color: #D0A059;
+	  font-size: 1.2em;
+	}
 }
 .three-b{
 	display: flex;
+
 }
 .votes{
+	display: flex;
+	flex-direction: column;
 	flex: 1;
+	padding-right: 50px;
 	p {
 	text-align: center;
 	}

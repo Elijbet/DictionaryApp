@@ -17,27 +17,17 @@
 
     <%#= will_paginate word.definitions %>
 
-      <% word.definitions.first(2).each do |definition| %>
+      <% word.definitions.order(:cached_votes_up => :desc).first(1).each do |definition| %>
         <div class="three-b">
 
-          <div class="votes centered">   
-          
-            <!-- voting functionality -->
-            <div>
-
-              <p><%= link_to like_word_definition_path(word, definition), method: :put do %>
-                <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
-              <% end %></p>
-              
-              <p><%= definition.get_upvotes.size %></p>
-              
-              <p><%= link_to dislike_word_definition_path(word, definition), method: :put do %>
-                <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i>
-              <% end %></p>
-
-            </div>
-            <!-- end of voting functionality -->
-
+          <div class="votes centered">
+            <h5>Votes Tally:</h5>
+            <br>
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            <h5><%= definition.cached_votes_up %></h5>
+            <br>
+            <h5><%= definition.cached_votes_down %></h5>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
           </div>
 
           <div class="definitions">
@@ -46,15 +36,16 @@
               <div class="honeycomb"></div>
           </div>
         </div>
-      
       <% end %>
-    
+
         <div class="three-b">
           <div class="votes">
           </div>
+
           <div class="definitions">
-            <h5><%= link_to 'Complete List of Definitions', word_path(word) %></h5>
+            <h5><%= link_to "View all Definitions for #{word.word.capitalize}", word_path(word) %></h5>
           </div>
+
         </div>
     <%#= will_paginate word.definitions %>
 

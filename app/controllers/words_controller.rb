@@ -7,13 +7,14 @@ class WordsController < ApplicationController
   def index
     @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
 
-    @definitions = @words.each  {|word| word.definitions.order('created_at DESC').page(params[:page])}
+    #@definitions = @words.each  {|word| word.definitions.order(:cached_votes_up => :desc)}
 
   end
 
   # GET /words/1
   # GET /words/1.json
   def show
+    @definitions = @word.definitions.order(:cached_votes_up => :desc)
   end
 
   # GET /words/new
