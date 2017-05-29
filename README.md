@@ -23,3 +23,4 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * check if the record (word) exists, before saving to database: first_or_create method
 * display words by date and top ranked definition first
 * votes tally on the index page
+* bootstrap tabs to manage multiple submission forms
