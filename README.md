@@ -20,8 +20,8 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * limit each do loop
 * font awesome icons
 * acts_as_voter gem on the nested resource definition
-* check if the record (word) exists, before saving to database: first_or_create method
+* check if the record (word) exists, before saving to database: first_or_create method; and then save the nested model by giving first_or_create method a block with nested attributes
 * display words by date and top ranked definition first
 * votes tally on the index page
 * bootstrap tabs to manage multiple submission forms
-* a little js to minimize the definition text area upon pressing of a button "I don't know the definition"
+* a little js to toggle a button between 2 states: one that says "I don't know the definition" and minimizes the text area, and another that says "Add Definition" and opens the text area.

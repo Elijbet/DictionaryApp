@@ -38,7 +38,9 @@ class WordsController < ApplicationController
     #@incoming_word = Word.new(word_params)
     #@word = Word.where(word: @incoming_word.word).first_or_create
 
-    @word = Word.where(word: word_params[:word]).first_or_create
+    @word = Word.where(word: word_params[:word]).first_or_create do |word|
+      word.attributes = word_params
+    end
     #The first_or_create method checks whether first returns nil or not. 
     #If it does return nil, then create is called.
 
