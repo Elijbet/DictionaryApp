@@ -25,3 +25,4 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * votes tally on the index page
 * bootstrap tabs to manage multiple submission forms
 * a little js to toggle a button between 2 states: one that says "I don't know the definition" and minimizes the text area, and another that says "Add Definition" and opens the text area.
+*
