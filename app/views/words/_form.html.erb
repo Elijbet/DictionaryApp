@@ -19,8 +19,13 @@
 
   <%= form.fields_for :definitions do |definition| %>
 
+
     <div class="form-group">
-      <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition" %>
+
+      <button type="button" class="btn btn-secondary form-control" onClick = "document.getElementById('chartdiv').setAttribute('style', 'height: 0px; padding-bottom: 0px; opacity: 0;')" >I don't know the definition!</button>
+
+        <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
+
     </div>
 
   <% end %>
