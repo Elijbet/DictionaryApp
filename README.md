@@ -24,3 +24,4 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * display words by date and top ranked definition first
 * votes tally on the index page
 * bootstrap tabs to manage multiple submission forms
+* a little js to minimize the definition text area upon pressing of a button "I don't know the definition"

@@ -17,3 +17,18 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+
+  $( "body" ).on( "click", "#ShiftButton", function(event) {
+    $("#chartdiv").toggle();
+    if($("#ShiftButton").text() === "Add Definition") {
+      $("#ShiftButton").text("I do not know the definition");
+    } else {
+      $("#ShiftButton").text("Add Definition") ;
+    }
+  });
+
+})
+
