@@ -6,7 +6,6 @@ class WordsController < ApplicationController
   # GET /words.json
   def index
     @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
-
     #@definitions = @words.each  {|word| word.definitions.order(:cached_votes_up => :desc)}
 
   end
@@ -25,6 +24,7 @@ class WordsController < ApplicationController
   def all_new
     @word = Word.new
     1.times { @word.definitions.build }
+    @words = Word.all
   end
 
   # GET /words/1/edit

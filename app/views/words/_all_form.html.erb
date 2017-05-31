@@ -32,7 +32,9 @@
       <%= render 'form', word: @word %>
 
     </div>
-    <div class="tab-pane" id="profile" role="tabpanel">...</div>
+    <div class="tab-pane" id="profile" role="tabpanel">
+      <%= render 'definition_form', word: @word %>
+    </div>
   </div>
 
 <% end %>

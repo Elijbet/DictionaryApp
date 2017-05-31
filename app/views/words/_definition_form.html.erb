@@ -1,0 +1,32 @@
+<%= form_for @word do |form| %>
+
+  <% if word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group upper-margin">
+    <%= select_tag "word", options_for_select(@words.map { |word| [word.word, word.id] }), class: "form-control"%>
+  </div>
+
+  <%= form.fields_for :definitions do |definition| %>
+
+    <div class="form-group">
+      <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
+    </div>
+
+  <% end %>
+
+  <div class="form-group">
+    <%= form.submit class: "btn btn-secondary form-control", value: "Create Definition" %>
+  </div>
+
+<% end %>
