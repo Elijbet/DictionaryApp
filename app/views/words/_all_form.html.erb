@@ -14,12 +14,12 @@
 <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+      <a class="nav-link active" data-toggle="tab" href="#word" role="tab">
       <h6>contribute new</h6><h5>WORD</h5><h6>with or w/o</h6><h5>DEFINITION</h5>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+      <a class="nav-link" data-toggle="tab" href="#definition" role="tab">
         <h6>select known word, to add</h6><h5>DEFINITION</h5>
       </a>
     </li>
@@ -27,12 +27,12 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="tab-pane active" id="home" role="tabpanel">
+    <div class="tab-pane active" id="word" role="tabpanel">
 
       <%= render 'form', word: @word %>
 
     </div>
-    <div class="tab-pane" id="profile" role="tabpanel">
+    <div class="tab-pane" id="definition" role="tabpanel">
       <%= render 'definition_form', word: @word %>
     </div>
   </div>
