@@ -14,7 +14,7 @@
 
 
   <div class="form-group upper-margin">
-    <%= select_tag "word", options_for_select(@words.map { |word| [word.word, word.id] }), include_blank: "Word", class: "form-control"%>
+    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }), include_blank: "Word", class: "form-control"%>
   </div>
 
   <%= form.fields_for :definitions do |definition| %>
