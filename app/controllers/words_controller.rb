@@ -13,7 +13,7 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.json
   def show
-    @definitions = @word.definitions.order(:cached_votes_up => :desc)
+    @definitions = @word.definitions.order(cached_votes_up: :desc, created_at: :desc)
   end
 
   # GET /words/new
@@ -22,9 +22,11 @@ class WordsController < ApplicationController
   end
 
   def all_new
+
     @word = Word.new
     1.times { @word.definitions.build }
     @words = Word.all
+
   end
 
   # GET /words/1/edit
@@ -34,6 +36,7 @@ class WordsController < ApplicationController
   # POST /words
   # POST /words.json
   def create
+
     #@word = Word.new(word_params)
     #@incoming_word = Word.new(word_params)
     #@word = Word.where(word: @incoming_word.word).first_or_create
@@ -45,19 +48,14 @@ class WordsController < ApplicationController
     #The first_or_create method checks whether first returns nil or not. 
     #If it does return nil, then create is called.
 
-    @word = Word.find_or_create_by(word: word_params[:word]) do |word|
-      word.attributes = word_params
-    end
 
-    #Finds the first record with the given attributes, or creates a record with 
-    #the attributes if one is not found:
+    @word = Word.find_or_create_by(word: word_params[:word])
+    @word.definitions.create(word_params[:definitions_attributes])
 
-    # Find the first user named "Scarlett" or create a new one with a
-    # different last name.
-    # User.find_or_create_by(first_name: 'Scarlett') do |user|
-    #   user.last_name = 'Johansson'
-    # end
-    # => #<User id: 2, first_name: "Scarlett", last_name: "Johansson">
+    logger.debug "------------------------------------>>>>>>>>>>>>>>>> #{word_params[:definitions_attributes]}"
+
+    #"word"=>{"word"=>"lorem", "definitions_attributes"=>{"0"=>{"definition"=>"ipsum"}}},
+    #"commit"=>"Create Word"}
 
     @word.user_id = current_user.id
 

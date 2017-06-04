@@ -1,15 +1,4 @@
-<%= form_with(model: word, local: true) do |form| %>
-  <% if word.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
 
-      <ul>
-      <% word.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -33,8 +22,10 @@
 
     </div>
     <div class="tab-pane" id="definition" role="tabpanel">
+
       <%= render 'definition_form', word: @word %>
+
     </div>
   </div>
 
-<% end %>
+
