@@ -1,4 +1,4 @@
-
+<p><%= will_paginate @word, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %></p>
 
 <!-- flex band -->
 
@@ -56,7 +56,7 @@
 <!-- end of flex band -->
 <% end %>
 
-<p><%= will_paginate @words %></p>
+<p><%= will_paginate @word, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %></p>
 
 <%= link_to 'New Word', new_word_path %>
 
