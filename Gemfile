@@ -48,7 +48,6 @@ gem 'tabs_on_rails', '~> 3.0'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate-bootstrap4'
-gem 'twitter_bootstrap_form_for', '~> 1.0', '>= 1.0.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
