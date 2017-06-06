@@ -7,6 +7,8 @@ class Word < ApplicationRecord
 	accepts_nested_attributes_for :definitions
 	#, reject_if: proc { |attributes| attributes[:definition].blank? }
 
+	validates :word, presence: true
+
 	self.per_page = 4
 
 end
