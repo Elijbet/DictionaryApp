@@ -6,6 +6,6 @@ class Definition < ApplicationRecord
 
 	acts_as_votable
 	
-	validates :definition, :URL, presence: true
+	validates :definition, presence: true
 
 end
