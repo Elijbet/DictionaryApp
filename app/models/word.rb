@@ -11,6 +11,6 @@ class Word < ApplicationRecord
 
 	self.per_page = 4
 
-	acts_as_taggable # Alias for acts_as_taggable_on :tags
+	acts_as_taggable_on :tags # Alias for acts_as_taggable_on :tags
 
 end

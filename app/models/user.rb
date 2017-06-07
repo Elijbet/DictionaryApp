@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :definitions
   has_many :words
+
 end

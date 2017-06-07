@@ -12,7 +12,16 @@
       <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>
     <% end %>
 
+      <br>
+
+      <!-- tags -->
+    <div>
+      <% word.tags.each do |tag| %>
+        <span class="tag css4"><%= tag.name %></span>
+      <% end %>
+    </div>
   </div>
+
   <div class="three">
 
     <%#= will_paginate word.definitions %>
