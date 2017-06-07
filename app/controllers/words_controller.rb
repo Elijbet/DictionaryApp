@@ -2,6 +2,8 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+  before_action :tag_cloud
+
   # GET /words
   # GET /words.json
   def index
@@ -89,6 +91,10 @@ class WordsController < ApplicationController
     end
   end
 
+  def tag_cloud
+    @tag = Word.tag_counts_on(:tags).order('count desc').limit(17)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_word
@@ -96,6 +102,6 @@ class WordsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
-      params.require(:word).permit(:word, definitions_attributes: [:definition, :URL])
+      params.require(:word).permit(:word, :tag_list, definitions_attributes: [:definition, :URL])
     end
 end

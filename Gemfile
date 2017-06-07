@@ -1,3 +1,4 @@
+gem 'acts-as-taggable-on', '~> 5.0'
 source 'https://rubygems.org'
 'ruby 2.4.1'
 
@@ -48,6 +49,7 @@ gem 'tabs_on_rails', '~> 3.0'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate-bootstrap4'
+gem 'acts-as-taggable-on', '~> 5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
