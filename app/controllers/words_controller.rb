@@ -27,6 +27,8 @@ class WordsController < ApplicationController
 
     @word = Word.new
     1.times { @word.definitions.build }
+              #definition.create(definition: "stuff", word_id: @word)
+              #word.definitions.build(definition: "stuff")
     @words = Word.all
 
   end
