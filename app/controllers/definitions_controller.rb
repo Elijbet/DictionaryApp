@@ -22,6 +22,7 @@ class DefinitionsController < ApplicationController
 
   # GET /definitions/1/edit
   def edit
+
   end
 
   # POST /definitions
@@ -47,7 +48,7 @@ class DefinitionsController < ApplicationController
   def update
     respond_to do |format|
       if @definition.update(definition_params)
-        format.html { redirect_to words_path, notice: 'Definition was successfully updated.' }
+        format.html { redirect_to word_path(@word), notice: 'Definition was successfully updated.' }
         format.json { render :show, status: :ok, location: @definition }
       else
         format.html { render :edit }

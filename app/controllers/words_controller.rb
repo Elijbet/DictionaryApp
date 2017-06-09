@@ -40,6 +40,7 @@ class WordsController < ApplicationController
   def create
 
     @word = Word.new(word_params)
+    
     #@incoming_word = Word.new(word_params)
     #@word = Word.where(word: @incoming_word.word).first_or_create
 
