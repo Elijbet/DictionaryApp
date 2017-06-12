@@ -27,26 +27,15 @@
           - The argument that you're essentially passing in is @word.definitions.build 
           - behaves like an if statement: if the argument is passed in, the form renders, if not then not.
         -->
-         <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
-         
-         <%= logger.debug(@word.id ) %>
+   <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
+   
+    <%= form.fields_for :definitions do |definition| %>
+      <div class="form-group">
 
-         <!-- 1. when button pressed for text area 
-                  - submit form
-
-               -->
-
-
-
-
-
-  <%#= form.fields_for :definitions do |definition| %>
-<!--     <div class="form-group">
-
-      <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
-      <%#= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
-    </div>
-  <%# end %> -->
+        <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
+        <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
+      </div>
+    <% end %>
 
   <div class="form-group">
     <%= form.submit class: "btn btn-secondary form-control" %>

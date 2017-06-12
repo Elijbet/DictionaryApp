@@ -1,5 +1,112 @@
 
-<%= render 'all_form', word: @word %>
+<%#= render 'all_form', word: @word %>
+
+
+<!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#word" role="tab">
+      <h6>contribute new</h6><h5>WORD</h5><h6>with or w/o</h6><h5>DEFINITION</h5>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#definition" role="tab">
+        <h6>select known word, to add</h6><h5>DEFINITION</h5>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="word" role="tabpanel">
+
+      <%#= render 'form', word: @word %>
+
+		 <%= form_for @word do |form| %>
+
+		  <% if @word.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+		      <ul>
+		      <% word.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+
+		  <div class="form-group upper-margin">
+		    <%= form.text_field :word, id: :word_word, class: "form-control", placeholder: "Word" %>
+		  </div>
+
+		  <div class="form-group">
+		    <%= form.text_field :tag_list, value: @word.tag_list.to_s, class: "form-control", placeholder: "Tags (separated by commas)"  %>
+		  </div> 
+		  <!-- This form.fields_for section only appears if 
+		        the 1.times { @word.definitions.build } appears in the controller action.  
+		        or 
+		        In here instead of :definitions; form.fields_for(:definitions) is a method that only works when argument is present 
+		          - The argument that you're essentially passing in is @word.definitions.build 
+		          - behaves like an if statement: if the argument is passed in, the form renders, if not then not.
+		        -->
+		   
+		    <%= form.fields_for :definitions do |definition| %>
+		      <div class="form-group">
+
+		        <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
+		        <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
+		      </div>
+		    <% end %>
+
+		  <div class="form-group">
+		    <%= form.submit class: "btn btn-secondary form-control" %>
+		  </div>
+
+		<% end %>
+
+
+    </div>
+    <div class="tab-pane" id="definition" role="tabpanel">
+
+      <%#= render 'definition_form', word: @word %>
+
+			<%= form_for @word do |form| %>
+
+			  <% if @word.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+			      <ul>
+			      <% word.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
+
+			  <div class="form-group upper-margin">
+			    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }), include_blank: "Word", class: "form-control"%>
+			  </div>
+
+			  <%= form.fields_for :definitions do |definition| %>
+
+			    <div class="form-group">
+			      <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
+			    </div>
+
+			  <% end %>
+
+			  <div class="form-group">
+			    <%= form.submit class: "btn btn-secondary form-control", value: "Create Definition" %>
+			  </div>
+
+			<% end %>
+
+    </div>
+  </div>
 
 <%= link_to 'Back', words_path %>
 
