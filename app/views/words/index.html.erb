@@ -40,7 +40,7 @@
           </div>
 
           <div class="definitions">
-              <h5><%= definition.definition %></h5>
+              <h5><%= simple_format(definition.definition.gsub(/\\r\\n/, "\n")) %></h5>
               <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago. </p>
               <div class="honeycomb"></div>
           </div>

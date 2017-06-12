@@ -48,7 +48,7 @@
             <h5><%= definition.definition %></h5>
             <p class="attribute"><%= definition.user.first_name %> <%= definition.user.last_name %>, Submitted <%= time_ago_in_words(definition.created_at) %> ago.</p>
             <div class="edit">
-              <% if current_user.id == @word.user_id %>
+              <% if current_user.id == definition.user_id %>
                 <%= link_to edit_word_definition_path(@word, definition) do %>
                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 <% end %>
