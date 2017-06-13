@@ -12,7 +12,6 @@ class WordsController < ApplicationController
     #@words = Word.all.order('created_at DESC').paginate(:page => params[:page])
     #@definitions = @words.each  {|word| word.definitions.order(:cached_votes_up => :desc)}
 
-
     if (params[:letter] != nil)
     @words = Word.all.order('created_at DESC').where("word like ?", params[:letter] +"%" ).paginate(:page => params[:page])
     # creates this /words?letter=i
@@ -110,7 +109,7 @@ class WordsController < ApplicationController
   end
 
   def word_array
-    # Create array consisting of the first letter of every visitor's last name
+    # Create array consisting of the first letter of every visitor's last name (word's word)
     @word_array = []
     @w = Word.all
     @w.each do |word|
