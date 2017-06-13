@@ -325,7 +325,7 @@ button#dropdownMenuButton.btn-secondary{
    box-shadow: none !important;
 }
 .show > .dropdown-menu {
-	width: 200px !important; /*this definitely works*/
+	width: 195px !important; /*this definitely works*/
  ul {
  	padding: 20px;
 	display: flex;
@@ -343,5 +343,23 @@ li.dropdown-item{
   height: 25px;
   border-radius: 25px;
   background-color: #5CB85C;
-	
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	a {
+		font-family: 'Montserrat Subrayada', sans-serif;
+	}
+}
+/*.dropdown-item:focus, .dropdown-item:hover {
+    color: #5CB85C;
+    text-decoration: none;
+    background-color: white;
+}*/
+nav div li.dropdown-item a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+ nav div li.dropdown-item a:hover {
+	  color: #5CB85C;
+    text-decoration: none;
 }
