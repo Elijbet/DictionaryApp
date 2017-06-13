@@ -316,3 +316,32 @@ nav div {
     border-image: initial;
     border-radius: 14px;
 }
+button#dropdownMenuButton.btn-secondary{
+	background: transparent;
+	border-color: transparent !important;
+	font-size: 1.5em;
+}
+.dropdown-toggle:focus {
+   box-shadow: none !important;
+}
+.show > .dropdown-menu {
+	width: 200px !important; /*this definitely works*/
+ ul {
+ 	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	}
+}
+
+li.dropdown-item{
+/*	flex-grow: 1; */	
+	padding: 5px;
+	margin: 5px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #5CB85C;
+	
+}

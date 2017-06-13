@@ -7,23 +7,52 @@
     <h4><%= link_to "Dictionary", root_path, class: "sub" %></h4>
   </div>
   <div class="collapse navbar-collapse vert-centered" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<!--     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Browse <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+    </ul> -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Browse
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-turbolinks="false">
+      <ul>
+        <li class="dropdown-item"><a href="#">A</a></li>
+        <li class="dropdown-item"><a href="#">B</a></li>
+        <li class="dropdown-item"><a href="#">C</a></li>
+        <li class="dropdown-item"><a href="#">D</a></li>
+        <li class="dropdown-item"><a href="#">E</a></li>
+        <li class="dropdown-item"><a href="#">F</a></li>
+        <li class="dropdown-item"><a href="#">G</a></li>
+        <li class="dropdown-item"><a href="#">H</a></li>
+        <li class="dropdown-item"><a href="#">I</a></li>
+        <li class="dropdown-item"><a href="#">J</a></li>
+        <li class="dropdown-item"><a href="#">K</a></li>
+        <li class="dropdown-item"><a href="#">L</a></li>
+        <li class="dropdown-item"><a href="#">M</a></li>
+        <li class="dropdown-item"><a href="#">N</a></li>
+        <li class="dropdown-item"><a href="#">O</a></li>
+        <li class="dropdown-item"><a href="#">P</a></li>
+        <li class="dropdown-item"><a href="#">Q</a></li>
+        <li class="dropdown-item"><a href="#">R</a></li>
+        <li class="dropdown-item"><a href="#">S</a></li>
+        <li class="dropdown-item"><a href="#">T</a></li>
+        <li class="dropdown-item"><a href="#">U</a></li>
+        <li class="dropdown-item"><a href="#">V</a></li>
+        <li class="dropdown-item"><a href="#">W</a></li>
+        <li class="dropdown-item"><a href="#">X</a></li>
+        <li class="dropdown-item"><a href="#">Y</a></li>
+        <li class="dropdown-item"><a href="#">Z</a></li>
+      </ul>
+      </div>
+    </div>
     <div class="box">
       <form class="form-inline my-2 my-lg-0 box-1 ml-auto">
 <!--          <a class="ml-auto">
-          <%= link_to all_new_words_path, class: "nav-link overlay", style:"color:#5CB85C", data: { turbolinks: false }  do %>
+          <%#= link_to all_new_words_path, class: "nav-link overlay", style:"color:#5CB85C", data: { turbolinks: false }  do %>
            <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>
-          <% end %>
+          <%# end %>
         </a> -->
         <div class="round-btn round-btn-outline-success ml-auto"><%= link_to "+", all_new_words_path, style:"color:#5CB85C", data: { turbolinks: false } %></div>
         <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search">
