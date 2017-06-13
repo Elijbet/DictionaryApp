@@ -4,11 +4,22 @@ class WordsController < ApplicationController
 
   before_action :tag_cloud
 
+  before_action :word_array
+
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
+    #@words = Word.all.order('created_at DESC').paginate(:page => params[:page])
     #@definitions = @words.each  {|word| word.definitions.order(:cached_votes_up => :desc)}
+
+
+    if (params[:letter] != nil)
+    @words = Word.all.order('created_at DESC').where("word like ?", params[:letter] +"%" ).paginate(:page => params[:page])
+    # creates this /words?letter=i
+    else
+    @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
+    end
+
 
   end
 
@@ -96,6 +107,19 @@ class WordsController < ApplicationController
 
   def tag_cloud
     @tag = Word.tag_counts_on(:tags).order('count desc').limit(17)
+  end
+
+  def word_array
+    # Create array consisting of the first letter of every visitor's last name
+    @word_array = []
+    @w = Word.all
+    @w.each do |word|
+        @word_array << word.word[0,1]
+        end
+    #Sort array alphabetically in ASC order
+    @word_array.sort!
+    #Remove duplicate elements
+    @word_array.uniq!
   end
 
   private
