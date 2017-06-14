@@ -42,8 +42,15 @@
           <%# end %>
         </a> -->
         <div class="round-btn round-btn-outline-success ml-auto"><%= link_to "+", all_new_words_path, style:"color:#5CB85C", data: { turbolinks: false } %></div>
-        <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+<!--         <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search">
+ --><!--         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ -->
+        <%= form_tag(words_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], class: "form-control mr-sm-2 ml-auto", placeholder: "Search" %> <!-- to retain the term in the field add second parameter , params[:term] -->
+          <%= submit_tag 'Search', class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+
       </form>
       <div class="box-2 ml-auto">
         <% if user_signed_in? %>

@@ -15,10 +15,11 @@ class WordsController < ApplicationController
     if (params[:letter] != nil)
     @words = Word.all.order('created_at DESC').where("word like ?", params[:letter] +"%" ).paginate(:page => params[:page])
     # creates this /words?letter=i
+    elsif params[:term]
+    @words = Word.where('word LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page])
     else
     @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
     end
-
 
   end
 
