@@ -36,4 +36,6 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * disable turbolinks for each link 
 * dropdown menu "Browse" that lets you select a letter
 * order content on button click to display all words starting with the selected letter
-* 
+* working simple search bar
+
+* apply pagination and search with AJAX  -  not working as of yet

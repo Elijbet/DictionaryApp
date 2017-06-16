@@ -19,6 +19,9 @@
 //= require_tree .
 
 
+//jQuery Turbolinks doesn't support ready events bound via $(document).on('ready', function). 
+//Instead, use $(document).ready(function) or $(function).
+
 $(document).ready(function() {
 
   $( "body" ).on( "click", "#ShiftButton", function(event) {
@@ -32,3 +35,26 @@ $(document).ready(function() {
 
 })
 
+$(function() {
+	//alert("dom is loaded"); works!
+
+	// ajax call on pagination link
+
+	//$("body").on("click",  ".words_ajax .pagination a", function(){
+	//	$.getScript(this.href);
+
+	$("body").on("click", "#words_ajax .pagination a", function() { //.On is the official replacement for .Live
+		//alert("click works!"); //works the first time the page is loaded
+		$(".pagination").html("Page is loading..."); //works the first time the page is loaded
+		$.get(this.href, null, null, "script");
+		return false;
+	});
+	// ajax call on search form
+	$("#words_search input").keyup(function() {
+		$.get($("#words_search").attr("action"), $("#words_search").serialize(), null, "script");
+		return false;
+	});
+});
+
+// dataType "script" => "Evaluates the response as JavaScript and returns it as plain text. " 
+// so how do I get rails to render js?
