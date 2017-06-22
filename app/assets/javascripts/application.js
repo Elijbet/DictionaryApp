@@ -32,8 +32,7 @@ $(document).ready(function() {
       $("#ShiftButton").text("Add Definition") ;
     }
   });
-
-})
+});
 
 $(function() {
 	//alert("dom is loaded"); works!
@@ -46,7 +45,7 @@ $(function() {
 	$("body").on("click", "#words_ajax .pagination a", function() { //.On is the official replacement for .Live
 		//alert("click works!"); //works the first time the page is loaded
 		$(".pagination").html("Page is loading..."); //works the first time the page is loaded
-		$.get(this.href, null, null, "script");
+		$.getScript(this.href); //is equivalent to $.get(this.href, null, null, "script");
 		return false;
 	});
 	// ajax call on search form

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="form-group">
+    <h2><%= @word.word %></h2>
+  </div>  
+
+  <div class="form-group">
     <%= form.label :definition %>
     <%= form.text_area :definition, id: :definition_definition, class: "form-control" %>
   </div>

@@ -13,4 +13,7 @@ class Word < ApplicationRecord
 
 	acts_as_taggable_on :tags # Alias for acts_as_taggable_on :tags
 
+
+
+
 end

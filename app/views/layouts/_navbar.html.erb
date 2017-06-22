@@ -54,11 +54,11 @@
       </form>
       <div class="box-2 ml-auto">
         <% if user_signed_in? %>
-          <a><%= link_to 'Log Out', destroy_user_session_path, class: "links" %></a>
-          <a><%= link_to 'Edit Account', edit_user_registration_path, class: "links" %></a>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "links" %>
+          <%= link_to 'Edit Account', edit_user_registration_path, class: "links" %>
         <% else %>
-          <a><%= link_to 'Sign Up', new_user_registration_path, class: "links" %></a>
-          <a><%= link_to 'Sign In', new_user_session_path, class: "links" %></a>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "links" %>
+          <%= link_to 'Sign In', new_user_session_path, class: "links" %>
         <% end %>
       </div>
     </div>

@@ -12,7 +12,7 @@ class WordsController < ApplicationController
     #@words = Word.all.order('created_at DESC').paginate(:page => params[:page])
     #@definitions = @words.each  {|word| word.definitions.order(:cached_votes_up => :desc)}
 
-    if (params[:letter] != nil)
+    if params[:letter]
     @words = Word.all.order('created_at DESC').where("word like ?", params[:letter] +"%" ).paginate(:page => params[:page])
     # creates this /words?letter=i
     elsif params[:term]
@@ -21,6 +21,10 @@ class WordsController < ApplicationController
     @words = Word.all.order('created_at DESC').paginate(:page => params[:page])
     end
 
+    respond_to do |format|
+      format.html # will render index.html.erb in case of a HTML request
+      format.js # will render index.js.erb in case of an AJAX request
+    end
   end
 
   # GET /words/1
