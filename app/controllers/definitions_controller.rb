@@ -84,7 +84,8 @@ class DefinitionsController < ApplicationController
     end
 
     def set_word
-      @word = Word.find(params[:word_id])
+      # @word = Word.find(params[:word_id])
+      @word = Word.find_by_word(params[:id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def definition_params
