@@ -37,7 +37,7 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * dropdown menu "Browse" that lets you select a letter
 * order content on button click to display all words starting with the selected letter
 * working simple search bar
-* gritter - This Ruby on Rails gem allows you to easily add Growl-like notifications to your application using a jQuery plugin called 'gritter’. - doesn't work yet
+* gritter - This gem allows you to easily add Growl-like notifications to your application using a jQuery plugin. - doesn't work yet
 
 
 

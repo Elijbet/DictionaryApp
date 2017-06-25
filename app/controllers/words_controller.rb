@@ -79,7 +79,7 @@ class WordsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Word was successfully created.' }
         format.json { render :show, status: :created, location: @word }
       else
-        format.html { render :new }
+        format.html { render :all_new }
         format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end

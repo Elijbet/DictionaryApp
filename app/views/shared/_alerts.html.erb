@@ -1,7 +1,0 @@
-<% if flash[:alert] %>
-	<%= js add_gritter(flash[:alert], title: "CodeUp Club Dictionary", sticky: false) %>
-<% elsif flash[:error] %>
-	<%= js add_gritter(flash[:error], title: "CodeUp Club Dictionary", sticky: false) %>
-<% else %>
-	<%= js add_gritter(flash[:notice], title: "CodeUp Club Dictionary", sticky: false) %>
-<% end %>
