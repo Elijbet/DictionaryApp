@@ -100,8 +100,11 @@
 
 
 			  <div class="form-group upper-margin">
-			    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }), include_blank: "Word", class: "form-control"%>
+			    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }, selected: params[:word]), include_blank: "Word", class: "form-control"%>
 			  </div>
+
+			  <%#= select_tag(:option, options_for_select([['All', 1], ['Co', 2], ['Bought', 3], ['View', 4], ['Top API', 5]], :selected => params[:option])) %>
+
 
 			  <%= form.fields_for :definitions do |definition| %>
 
