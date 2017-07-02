@@ -18,94 +18,15 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
+
     <div class="tab-pane active" id="word" role="tabpanel">
-
-      <%#= render 'form', word: @word %>
-
-		 <%= form_for @word do |form| %>
-
-		  <% if @word.errors.any? %>
-		    <div id="error_explanation">
-		      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
-
-		      <ul>
-		      <% @word.errors.full_messages.each do |message| %>
-		        <li><%= message %></li>
-		      <% end %>
-		      </ul>
-		    </div>
-
-		    <!-- Gritter message instead of the error message -->
-
- 		    <% @word.errors.full_messages.each do |error| %>
-		      <%= alert_generator error %>
-		    <% end %>
- 		  <% end %> 
- 
-
-		  <div class="form-group upper-margin">
-		    <%= form.text_field :word, id: :word_word, class: "form-control", placeholder: "Word" %>
-		  </div>
-
-		  <div class="form-group">
-		    <%= form.text_field :tag_list, value: @word.tag_list.to_s, class: "form-control", placeholder: "Tags (separated by commas)"  %>
-		  </div> 
-		   
-		    <%= form.fields_for :definitions do |definition| %>
-		      <div class="form-group">
-
-		        <button type="button" id="ShiftButton" class="btn btn-secondary form-control" >I don't know the definition!</button>
-		        <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
-		      </div>
-		    <% end %>
-
-		  <div class="form-group">
-		    <%= form.submit class: "btn btn-secondary form-control" %>
-		  </div>
-
-		<% end %>
-
+      <%= render "new_word_new_definition_form" %>
     </div>
     
     <div class="tab-pane" id="definition" role="tabpanel">
-
-      <%#= render 'definition_form', word: @word %>
-
-			<%= form_for @word do |form| %>
-
-<!-- 			  <#% if @word.errors.any? %>
- --><!-- 			    <div id="error_explanation">
-			      <h2><%#= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
-
-			      <ul>
-			      <#% word.errors.full_messages.each do |message| %>
-			        <li><%#= message %></li>
-			      <#% end %>
-			      </ul>
-			    </div> -->
-
-			  <div class="form-group upper-margin">
-			    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }, selected: params[:word]), include_blank: "Word", class: "form-control"%>
-			  </div>
-
-			  <%#= select_tag(:option, options_for_select([['All', 1], ['Co', 2], ['Bought', 3], ['View', 4], ['Top API', 5]], :selected => params[:option])) %>
-
-
-			  <%= form.fields_for :definitions do |definition| %>
-
-			    <div class="form-group">
-			      <%= definition.text_field :definition, class: "form-control definition", placeholder: "Definition", id: "chartdiv"%>
-			    </div>
-
-			  <% end %>
-
-			  <div class="form-group">
-			    <%= form.submit class: "btn btn-secondary form-control", value: "Create Definition" %>
-			  </div>
-
-			<% end %>
-
+      <%= render "existing_word_new_definition_form" %>
     </div>
+
   </div>
 
 <%= link_to 'Back', words_path %>
