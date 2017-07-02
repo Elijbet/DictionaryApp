@@ -38,7 +38,7 @@ class WordsController < ApplicationController
     @word = Word.new
   end
 
-  def all_new
+  def new_word_multiple_form
 
     @word = Word.new
     1.times { @word.definitions.build }

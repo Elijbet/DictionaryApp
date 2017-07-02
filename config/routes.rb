@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       end
     end 
   	collection do
-  		get 'all_new'
+      get '/add-words',   to: 'words#new_word_multiple_form',     as: 'add'
   	end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -50,13 +50,6 @@
 		  <div class="form-group">
 		    <%= form.text_field :tag_list, value: @word.tag_list.to_s, class: "form-control", placeholder: "Tags (separated by commas)"  %>
 		  </div> 
-		  <!-- This form.fields_for section only appears if 
-		        the 1.times { @word.definitions.build } appears in the controller action.  
-		        or 
-		        In here instead of :definitions; form.fields_for(:definitions) is a method that only works when argument is present 
-		          - The argument that you're essentially passing in is @word.definitions.build 
-		          - behaves like an if statement: if the argument is passed in, the form renders, if not then not.
-		        -->
 		   
 		    <%= form.fields_for :definitions do |definition| %>
 		      <div class="form-group">
@@ -90,14 +83,6 @@
 			      <#% end %>
 			      </ul>
 			    </div> -->
-
-			    <!-- Gritter message instead of the error message -->
-
-<!-- 		    	<#% word.errors.full_messages.each do |error| %>
-			      <%#= js add_gritter(error, title: "CodeUp Club Dictionary", sticky: false) %>
-			    <#% end %>
-			  <#% end %> -->
-
 
 			  <div class="form-group upper-margin">
 			    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }, selected: params[:word]), include_blank: "Word", class: "form-control"%>
