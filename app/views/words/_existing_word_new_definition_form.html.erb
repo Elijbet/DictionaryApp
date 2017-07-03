@@ -14,7 +14,17 @@
     </div> -->
 
   <div class="form-group upper-margin">
-    <%= select_tag :word, options_for_select(Word.all.map { |word| [word.word, word.id] }, selected: params[:word]), include_blank: "Word", class: "form-control"%>
+    <%= select_tag :id, #:id or :word_id (unsure)
+        options_for_select(Word.all.map { |word| [word.word, word.id] }),
+        include_blank: "Word",
+        class: "form-control"%>
+
+<!-- http://guides.rubyonrails.org/form_helpers.html#building-complex-forms -->
+<%#= select_tag :word_id,     // (1) :id SAME AS <select name="city_id" id="city_id">
+    options_for_select(Word.all.map { |word| [word.word, word.id] }, // (2) the <select> options
+    selected: 3),             // (3) DO NOT USE HERE: this is the <select> option that is preselected. 
+    include_blank: "Word",    // (4) Put "Word" as the default for the dropdown. Do #3 *OR* #4
+    class: "form-control"%>
   </div>
 
   <%#= select_tag(:option, options_for_select([['All', 1], ['Co', 2], ['Bought', 3], ['View', 4], ['Top API', 5]], :selected => params[:option])) %>

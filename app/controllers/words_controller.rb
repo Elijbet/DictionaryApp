@@ -56,7 +56,19 @@ class WordsController < ApplicationController
   # POST /words.json
   def create
 
-    @word = Word.new(word_params)
+    # From **new_word_multiple_form.html.erb**, there are TWO TABS submitting to words#create, 
+    # if    #FIRST TAB in the form create a NEW @word and @definition.
+        #     When creating a **NEW @word** the @word.id IS NIL, until after the save (when autoassigns .id)
+    # else  #SECOND TAB in the form uses EXISTING @word and creates new @definition
+        #     therefore, for EXISTING @word, params[:id] will exist, and be used
+        #     (Note, create action for /words/:id/definitions/new) will also work here in the "else"
+
+    if params[:id].nil? 
+      @word = Word.new(word_params)
+    else
+      @word = Word.find(params[:id]) 
+    end
+    # ...therefore, if @word IS NIL, 
     
     #@incoming_word = Word.new(word_params)
     #@word = Word.where(word: @incoming_word.word).first_or_create
@@ -79,7 +91,7 @@ class WordsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Word was successfully created.' }
         format.json { render :show, status: :created, location: @word }
       else
-        format.html { render :all_new }
+        format.html { render :new_word_multiple_form }
         format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
