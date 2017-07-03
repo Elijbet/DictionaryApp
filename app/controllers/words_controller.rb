@@ -66,7 +66,8 @@ class WordsController < ApplicationController
     if params[:id].nil? 
       @word = Word.new(word_params)
     else
-      @word = Word.find(params[:id]) 
+      @word = Word.find(params[:id])
+      @word.definitions.create!(definition: params[:word][:definitions_attributes]['0'][:definition])
     end
     # ...therefore, if @word IS NIL, 
     
