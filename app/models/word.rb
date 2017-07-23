@@ -17,4 +17,7 @@ class Word < ApplicationRecord
  #  	word
 	# end
 
+	extend FriendlyId
+  friendly_id :word, use: :slugged
+
 end

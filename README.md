@@ -38,7 +38,7 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * order content on button click to display all words starting with the selected letter
 * working simple search bar
 * gritter - This gem allows you to easily add Growl-like notifications to your application using a jQuery plugin. - doesn't work yet
-
+* friendly_id gem for slugging. It lets you create human-friendly strings instead of numeric ids.
 
 
 * apply pagination and search with AJAX  -  not working as of yet

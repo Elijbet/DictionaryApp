@@ -51,6 +51,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate-bootstrap4'
 gem 'acts-as-taggable-on', '~> 5.0'
 gem 'gritter', '~> 1.2'
+gem 'friendly_id', '~> 5.2', '>= 5.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
