@@ -1,6 +1,8 @@
 ## Personal Project: Rails Dictionary App
+______________________
 
-### This app is something inbetween stackoverflow and urban dictionary. A dictionary based on Member submissions. A signed in user can submit a word for others to define, or submit a definition to an existing word. Users vote each others definitions and the most voted for surfaces on top. User sumissions have their names and date of submission under the words and definitions. Words can be tagged and are searchable. The plus sign next to a search bar gets you to a contribution page. First tab lets you contribute new word with or without definition. Second has a dropdown to select a known word from so he/she can submit their own definition.
+ This app is something inbetween stackoverflow and urban dictionary. A dictionary based on Member submissions. A signed in user can submit a word for others to define, or submit a definition to an existing word. Users vote each others definitions and the most voted for surfaces on top. User sumissions have their names and date of submission under the words and definitions. Words can be tagged and are searchable. The plus sign next to a search bar gets you to a contribution page. First tab lets you contribute new word with or without definition. Second has a dropdown to select a known word from so he/she can submit their own definition.
+_______________________
 
 Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 
