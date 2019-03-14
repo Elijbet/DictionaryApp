@@ -55,5 +55,5 @@ Please check out the app @ [Dictionary App](https://dictionaryapp-lizk.herokuapp
 
 ## Authors
 
-###Eliza Khachatryan
+Eliza Khachatryan
 
