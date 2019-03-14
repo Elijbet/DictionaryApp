@@ -1,13 +1,14 @@
-## Personal Project: Rails Dictionary App
+# Personal Project: Rails Dictionary App
 ______________________
 
- This app is something inbetween stackoverflow and urban dictionary. A dictionary based on Member submissions. A signed in user can submit a word for others to define, or submit a definition to an existing word. Users vote each others definitions and the most voted for surfaces on top. User sumissions have their names and date of submission under the words and definitions. Words can be tagged and are searchable. The plus sign next to a search bar gets you to a contribution page. First tab lets you contribute new word with or without definition. Second has a dropdown to select a known word from so he/she can submit their own definition.
+ > This app is something inbetween stackoverflow and urban dictionary. A dictionary based on Member submissions. A signed in user can submit a word for others to define, or submit a definition to an existing word. Users vote each others definitions and the most voted for surfaces on top. User sumissions have their names and date of submission under the words and definitions. Words can be tagged and are searchable. The plus sign next to a search bar gets you to a contribution page. First tab lets you contribute new word with or without definition. Second has a dropdown to select a known word from so he/she can submit their own definition.
 _______________________
 
-Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
+Please check out the app @ [Dictionary App](https://dictionaryapp-lizk.herokuapp.com/)
+
+## Features
 
 * rails 5.1 app
-* git and github
 * postgres database both on local and heroku
 * scaffold definition
 * scaffold word
@@ -44,6 +45,15 @@ Please check out the website @ https://dictionaryapp-lizk.herokuapp.com/
 * working simple search bar
 * gritter - This gem allows you to easily add Growl-like notifications to your application using a jQuery plugin. - doesn't work yet
 * friendly_id gem for slugging. It lets you create human-friendly strings instead of numeric ids.
-
-
 * apply pagination and search with AJAX  -  not working as of yet
+
+## Installation
+
+- clone the repo and navigate to the project directory
+- `rails s` to run locally
+- Open http://localhost:3000 to view it in the browser
+
+## Authors
+
+###Eliza Khachatryan
+
