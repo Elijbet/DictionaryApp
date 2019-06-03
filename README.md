@@ -6,6 +6,14 @@ _______________________
 
 Please check out the app @ [Dictionary App](https://dictionaryapp-lizk.herokuapp.com/)
 
+# Project Images
+
+![Dictionary App Images](https://drive.google.com/uc?export=view&id=1YDXDYADKGjwC9DAYH3611kTKqxkoL_vE)
+
+![Dictionary App Images](https://drive.google.com/uc?export=view&id=18VoihkF3l6qT4JzjUETvERTUNXXhxc5G)
+
+![Dictionary App Images](https://drive.google.com/uc?export=view&id=12mC6OLUOQ3QtTeOBMlDl16Ogw2k7b-8l)
+
 ## Features
 
 * rails 5.1 app
