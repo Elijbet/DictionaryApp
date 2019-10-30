@@ -42,7 +42,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'tabs_on_rails', '~> 3.0'
